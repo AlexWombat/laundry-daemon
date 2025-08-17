@@ -45,6 +45,8 @@ def book_laundry(session):
 
     if response_booking.status_code != 200:
         email_client.send_email()
+    else:
+        print("Laundry booked successfully")
 
 def generate_headers():
     return {

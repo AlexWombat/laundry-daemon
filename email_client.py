@@ -3,13 +3,11 @@ from email.message import EmailMessage
 import os
 from dotenv import load_dotenv
 
-def send_email():
+def send_email(subject, body):
     load_dotenv()
     password = os.getenv('APP_PASSWORD')
     sender_email = os.getenv('EMAIL')
     receiver_email = os.getenv('EMAIL')
-    subject = "Tvättstugan"
-    body = "Hallå där! Någon jäkel har snott din tvättid!"
 
     msg = EmailMessage()
     msg['From'] = sender_email

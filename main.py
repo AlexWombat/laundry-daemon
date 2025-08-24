@@ -44,7 +44,7 @@ def book_laundry(session):
     response_booking = session.post(BOOKING_URL, json=booking_payload, headers=generate_headers())
 
     if response_booking.status_code != 200:
-        email_client.send_email("Tvättstugan", "Systemfel")
+        email_client.send_email("Tvättstugan", "Systemfel!")
     for booking in response_booking.json()['Bookings']:
         if booking['WeekNumber'] == iso_week and booking['SchedulePeriodId'] == 4:
             if booking['IsOwned'] != True:
